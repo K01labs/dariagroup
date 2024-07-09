@@ -1,0 +1,481 @@
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: 'Lora', serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f7f7f7;
+    /* Background color */
+    color: #333;
+    overflow-x: hidden;
+    /* Prevent horizontal overscroll */
+    background-image:
+        linear-gradient(rgba(255, 255, 255, 0.0),
+            rgba(255, 255, 255, 0.0)),
+        url('assets/pattern.svg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+}
+
+/* Ensure content is fully opaque */
+header,
+main,
+footer {
+    position: relative;
+    z-index: 1;
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 4rem;
+    background-color: #fff;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.logo {
+    font-size: 1.5rem;
+    font-weight: bold;
+    font-family: 'Montserrat', sans-serif;
+}
+
+.logo a{
+    color: #333;
+    text-decoration: none;
+}
+nav ul {
+    list-style: none;
+    display: flex;
+    gap: 2rem;
+    margin: 0;
+    padding: 0;
+}
+
+nav a {
+    text-decoration: none;
+    color: #333;
+    font-weight: light;
+    font-size: 1rem;
+    font-family: 'Montserrat', sans-serif;
+}
+
+/* Styles for the hamburger menu */
+.menu-icon {
+    display: none;
+    font-size: 2rem;
+    cursor: pointer;
+}
+
+main {
+    padding: 0;
+    /* Remove padding to allow sections to fill width */
+    max-width: 100%;
+    /* Prevent content from exceeding viewport width */
+    overflow-x: hidden;
+    /* Prevent horizontal overscroll */
+}
+
+.horizontal-sections {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    gap: 2rem;
+    min-height: 30rem;
+    padding: 4rem 4rem;
+    max-width: 100rem;
+    justify-content: center;
+    margin: auto;
+    /* Add padding to maintain space around sections */
+}
+
+.block {
+    background-color: #fff;
+    border-radius: 16px;
+    /* Softer, more rounded corners */
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    /* Softer shadow */
+    padding: 3rem;
+    margin-bottom: 2rem;
+    transition: transform 0.3s ease-in-out, opacity 0.3s ease-in-out;
+    opacity: 0;
+    transform: translateY(20px);
+    flex: 1 1 calc(33.333% - 2rem);
+    /* Use flex-basis for responsive width */
+    min-height: 50%;
+    box-sizing: border-box;
+    /* Ensure padding is included in width */
+    display: flex;
+    flex-direction: column;
+    /* Arrange items in a column */
+}
+
+.block h2,
+.block p {
+    margin: 0;
+    /* Remove default margins */
+    padding: 0;
+    /* Remove default padding */
+}
+
+.block button {
+    margin-top: auto;
+    /* Pushes the button to the bottom */
+}
+
+.block>*:not(button) {
+    margin-bottom: 1rem;
+    /* Add some space between elements, except button */
+}
+
+.block button {
+    margin-top: auto;
+    /* Pushes the button to the bottom */
+}
+
+.block.show {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+#studio-intro {
+    background-color: #f5e3c8;
+    /* Subtle off-white */
+}
+
+#capital-intro {
+    background-color: #cfd8e3;
+    /* Subtle off-white */
+}
+
+#fabrics-intro {
+    background-color: #e9d8c8;
+    /* Subtle off-white */
+}
+
+/* section {
+    margin-bottom: 4rem;
+} */
+
+
+
+/* Hero section for alignment with the example */
+.hero {
+    /* background-color: #f7f7f7; */
+    padding: 4rem 4rem;
+    text-align: center;
+}
+
+.hero h1 {
+    font-size: 3.0rem;
+    font-weight: 700;
+    line-height: 1.4;
+    margin-bottom: 2rem;
+    font-family: 'Montserrat', sans-serif;
+    min-height: 7vh;
+    margin-top: 7rem;
+    letter-spacing: -0.04em;
+    color: #333;
+}
+
+.hero h1 span {
+    text-decoration: underline;
+}
+
+.cards {
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+}
+
+.card {
+    background-color: #fff;
+    border-radius: 16px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    padding: 2rem;
+    flex: 1 1 calc(50% - 2rem);
+    max-width: 300px;
+    text-align: left;
+}
+
+.icon {
+    width: 5rem;
+    /* Adjust size as needed */
+    height: auto;
+    display: block;
+    margin: 0 auto 2rem;
+    padding: 2rem;
+    /* Center the icon and add some space below */
+}
+
+.block p {
+    font-size: 1.2rem;
+    color: #777;
+    font-family: 'Lora', serif;
+    display: flex;
+    flex-direction: column;
+}
+
+.block sub {
+    font-size: 0.9rem;
+    color: #777;
+    font-family: 'Lora', serif;
+    border: 1px solid #777;
+    /* Thin border */
+    border-radius: 4px;
+    /* Rounded edges */
+    padding: 2px 4px;
+    /* Padding around the text for spacing */
+    display: inline-block;
+    /* Ensure it wraps around the text properly without expanding */
+    max-width: max-content;
+    /* Ensure the element width is as small as possible */
+}
+
+.card h3 {
+    font-size: 1.4rem;
+    margin-top: 0;
+    font-family: 'Montserrat', sans-serif;
+}
+
+.card s1 {
+    font-size: 4rem;
+    margin-top: 0;
+    font-family: 'Montserrat', sans-serif;
+    width: 100%;
+    justify-content: center;
+    text-align: center;
+    margin: auto;
+    display: block;
+}
+
+.block button {
+    background-color: #333;
+    color: #fff;
+    border: none;
+    border-radius: 8px;
+    padding: 0.75rem 1.5rem;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    font-family: 'Montserrat', sans-serif;
+}
+
+.block button:hover {
+    background-color: #555;
+}
+
+/* New styles for About Us and Contact sections */
+.split-section {
+    background: url('assets/backgrounds/background.svg') no-repeat center;
+    background-size: cover;
+    padding: 8rem 8rem;
+    padding-bottom: 15rem;
+    padding-top: 5rem;
+    width: 100vw;
+    box-sizing: border-box;
+    position: relative;
+}
+
+.split-section.studio {
+    background: url('assets/backgrounds/background-studio.svg') no-repeat center;
+}
+
+.split-section.capital {
+    background: url('assets/backgrounds/background-capital.svg') no-repeat center;
+}
+
+.split-section.fabrics {
+    background: url('assets/backgrounds/background-fabrics.svg') no-repeat center;
+}
+
+.split-section img {
+    width: 35%;
+    max-height: 20rem;
+    object-fit: cover;
+    border-radius: 16px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    max-width: 70rem;
+}
+
+.split-section .text-content {
+    width: 50%;
+    padding: 2rem;
+    text-align: left;
+}
+
+.split-section .cards {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    gap: 2rem;
+    margin-top: 2rem;
+    width: 100%;
+}
+
+.card {
+    background-color: #fff;
+    border-radius: 16px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    padding: 2rem;
+    flex: 1 1 calc(50% - 2rem);
+    max-width: 300px;
+    text-align: left;
+}
+
+.split-section .content-container {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    width: 100%;
+    gap: 2rem;
+    max-width: 80rem;
+    margin: auto;
+}
+
+.split-section h2 {
+    font-size: 2.4rem;
+    font-weight: 700;
+    font-family: 'Montserrat', sans-serif;
+    margin-bottom: 1.5rem;
+}
+
+.split-section p {
+    font-size: 1.2rem;
+    color: #555;
+    font-family: 'Lora', serif;
+    line-height: 1.6;
+    margin-bottom: 1.5rem;
+}
+
+.split-section button {
+    background-color: #333;
+    color: #fff;
+    border: none;
+    border-radius: 8px;
+    padding: 0.75rem 1.5rem;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    font-family: 'Montserrat', sans-serif;
+}
+
+.split-section button:hover {
+    background-color: #555;
+}
+
+@media (max-width: 850px) {
+    .split-section .content-container {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .split-section img,
+    .split-section .text-content {
+        width: 100%;
+        padding: 1rem;
+    }
+
+    .split-section .cards {
+        flex-direction: column;
+        gap: 1rem;
+    }
+
+    .card {
+        max-width: 100%;
+    }
+}
+
+/* Footer styles */
+footer {
+    background-color: #333;
+    color: #fff;
+    padding: 2rem 1rem;
+    font-family: 'Montserrat', sans-serif;
+    text-align: center;
+}
+
+.footer-content p {
+    margin: 0.5rem 0;
+    font-size: 0.9rem;
+}
+
+.footer-content a {
+    color: #fff;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.footer-content a:hover {
+    text-decoration: underline;
+}
+
+.separator {
+    width: 100%;
+    height: 100px;
+    background: linear-gradient(to bottom, rgba(255, 255, 255, 0) 0%, rgba(255, 255, 255, 0) 75%, #eaeaea 75%),
+        url('assets/separator-top.svg') no-repeat center;
+    background-size: cover;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+@media (max-width: 850px) {
+    .horizontal-sections {
+        flex-direction: column;
+        padding: 3rem 3rem;
+        /* Stack blocks vertically on small screens */
+    }
+
+    .block {
+        min-width: 100%;
+        /* Ensure blocks take full width on small screens */
+    }
+
+    .split-section {
+        padding: 3rem 3rem;
+        padding-top: 10rem;
+        padding-bottom: 15rem;
+    }
+
+    .split-section .text-content {
+        padding-left: 2rem;
+    }
+
+    .menu-icon {
+        display: block;
+        /* Show the menu icon on mobile devices */
+    }
+
+    nav ul {
+        display: none;
+        /* Hide the menu by default */
+        flex-direction: column;
+        gap: 1rem;
+        background-color: #fff;
+        position: absolute;
+        top: 60px;
+        /* Ensure it's below the header */
+        right: 0;
+        width: 200px;
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        padding: 1rem;
+        z-index: 10;
+        /* Ensure it is above other content */
+    }
+
+    nav ul.show {
+        display: flex;
+        /* Show the menu when the icon is clicked */
+    }
+
+
+    .footer-content p {
+        font-size: 0.8rem;
+    }
+}
