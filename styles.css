@@ -49,7 +49,15 @@ header {
     padding: 1rem 4rem;
     background-color: #fff;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    position: relative;
+    z-index: 10;
+        /* Ensure header is above other content */
+    max-width: 120rem;
+    margin: auto;
+    width: 100%;
+    box-sizing: border-box;
 }
+
 
 .logo {
     font-size: 1.5rem;
@@ -64,7 +72,7 @@ header {
 nav ul {
     list-style: none;
     display: flex;
-    gap: 2rem;
+    /* gap: 2rem; */
     margin: 0;
     padding: 0;
 }
@@ -75,6 +83,32 @@ nav a {
     font-weight: light;
     font-size: 1rem;
     font-family: 'Montserrat', sans-serif;
+    padding: 0.75rem 0.75rem;
+    transition: background-color 0.3s ease;
+    border-radius: 8px;
+}
+
+nav a:hover {
+    background-color: #eaeaea;
+    /* color: #fff; */
+    border: none;
+    border-radius: 8px;
+    /* margin: 0.75rem 0.75rem; */
+    /* font-size: 1rem; */
+    cursor: pointer;
+    font-family: 'Montserrat', sans-serif;
+}
+
+nav ul li.studio-hover a:hover {
+    background-color: #f5e3c8;
+}
+
+nav ul li.capital-hover a:hover {
+    background-color: #cfd8e3;
+}
+
+nav ul li.fabrics-hover a:hover {
+    background-color: #e9d8c8;
 }
 
 /* Styles for the hamburger menu */
@@ -203,6 +237,8 @@ main {
     display: flex;
     justify-content: center;
     gap: 2rem;
+    max-width: 80rem;
+    margin: auto;
 }
 
 .card {
@@ -379,6 +415,57 @@ main {
 
 .split-section button:hover {
     background-color: #555;
+}
+
+/* New styles for the Team section */
+#team .cards {
+    display: flex;
+    flex-wrap: nowrap;
+    justify-content: space-between;
+    gap: 2rem;
+    margin-top: 2rem;
+}
+
+#team .card {
+    background-color: #eaeaea;
+    border-radius: 16px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.0);
+    border: 2px solid #f7f7f7;
+    /* Thin border */
+    border-radius: 16px;
+    padding: 2rem;
+    flex: 1 1 calc(30% - 2rem);
+    max-width: 100%;
+    text-align: left;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#team .card img {
+    width: 100%;
+    max-width: 150px;
+    height: 150px;
+    /* Ensures 1:1 aspect ratio */
+    object-fit: cover;
+    /* Ensures the image covers the entire area */
+    border-radius: 50%;
+    margin-bottom: 0.5rem;
+}
+
+#team .card h3 {
+    font-size: 1.2rem;
+    margin: 1rem 0 0.5rem 0;
+    font-family: 'Montserrat', sans-serif;
+}
+
+#team .card p {
+    font-size: 1.2rem;
+    color: #555;
+    font-family: 'Lora', serif;
+    line-height: 1.6;
+    margin-bottom: 1.5rem;
+    text-align: center;
 }
 
 @media (max-width: 850px) {

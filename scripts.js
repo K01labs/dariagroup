@@ -40,3 +40,10 @@ document.getElementById('fabrics-button').addEventListener('click', function() {
     document.getElementById('fabrics').scrollIntoView({ behavior: 'smooth' });
 });
 });
+
+
+document.addEventListener('DOMContentLoaded', function() {
+    document.getElementById('research-button').addEventListener('click', function() {
+        window.location.href = 'mailto:hello@dariagroup.xyz';
+    });
+});
