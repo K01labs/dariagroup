@@ -4,382 +4,244 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Daria</title>
-
-    <!-- SEO Meta Tags -->
-    <meta name="description" content="DARIA - Driving innovation in AI with a focus on startups and investments.">
-    <meta name="keywords" content="AI, startups, investments, innovation, technology, DARIA">
-    <meta name="author" content="DARIA">
-
-    <!-- Open Graph Meta Tags -->
-    <meta property="og:title" content="DARIA | Driving Innovation in AI">
-    <meta property="og:description"
-        content="DARIA - Driving innovation in AI with a focus on startups and investments.">
-    <meta property="og:image" content="https://dariagroup.xyz/assets/image.webp">
-    <meta property="og:url" content="http://dariagroup.xyz">
-    <meta property="og:type" content="website">
-
-    <!-- Twitter Card Meta Tags -->
-    <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="DARIA | Driving Innovation in AI">
-    <meta name="twitter:description"
-        content="DARIA - Driving innovation in AI with a focus on startups and investments.">
-    <meta name="twitter:image" content="https://dariagroup.xyz/assets/image.webp">
-    <!-- <meta name="twitter:site" content="@yourTwitterHandle"> -->
-
-    <!-- Canonical Link -->
-    <link rel="canonical" href="http://dariagroup.xyz">
-
-    <!-- Favicon -->
-    <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
-
-    <!-- Preconnect -->
+    <title>DARIA</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-
-    <!-- Preload Google Fonts -->
-    <link rel="preload"
-        href="https://fonts.googleapis.com/css2?family=Lora:wght@400;700&family=Montserrat:wght@400;700&display=swap"
-        as="style" onload="this.onload=null;this.rel='stylesheet'">
-    <noscript>
-        <link
-            href="https://fonts.googleapis.com/css2?family=Lora:wght@400;700&family=Montserrat:wght@400;700&display=swap"
-            rel="stylesheet">
-    </noscript>
-
-    <!-- Inline Critical CSS -->
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;700&display=swap" rel="stylesheet">
     <style>
-        body {
-            font-family: 'Lora', serif;
+        * {
             margin: 0;
             padding: 0;
-            background-color: #f7f7f7;
-            color: #333;
-            overflow-x: hidden;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Montserrat', sans-serif;
+            background-color: #0a0a0a;
+            color: #ffffff;
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            overflow: hidden;
+            position: relative;
+        }
+
+        .gradient-bg {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(45deg,
+                    rgba(30, 30, 30, 0.3),
+                    rgba(60, 60, 60, 0.1));
+            filter: blur(100px);
+            animation: gradientShift 15s ease infinite;
+        }
+
+        @keyframes gradientShift {
+            0% {
+                transform: translate(0, 0);
+            }
+
+            50% {
+                transform: translate(-10%, 10%);
+            }
+
+            100% {
+                transform: translate(0, 0);
+            }
+        }
+
+        .content {
+            text-align: center;
+            z-index: 1;
+            opacity: 0;
+            animation: fadeIn 2s ease forwards;
+            padding: 2rem;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .logo {
+            font-size: 3.5rem;
+            font-weight: 700;
+            letter-spacing: 0.5rem;
+            margin-bottom: 2rem;
+            background: linear-gradient(135deg,
+                    #ffffff 0%,
+                    #a0a0a0 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            animation: shimmer 3s ease infinite;
+        }
+
+        @keyframes shimmer {
+            0% {
+                background-position: -200% center;
+            }
+
+            100% {
+                background-position: 200% center;
+            }
+        }
+
+        .subtitle {
+            font-size: 1.2rem;
+            font-weight: 300;
+            letter-spacing: 0.2rem;
+            margin-bottom: 3rem;
+            opacity: 0.8;
+        }
+
+        .contact {
+            font-size: 1rem;
+            color: #666;
+            transition: color 0.3s ease;
+            text-decoration: none;
+        }
+
+        .contact:hover {
+            color: #fff;
+        }
+
+        .particle-canvas {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: 0;
+        }
+
+        .particles {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+        }
+
+        .particle {
+            position: absolute;
+            width: 2px;
+            height: 2px;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 50%;
+        }
+
+        @media (max-width: 768px) {
+            .logo {
+                font-size: 2.5rem;
+            }
+
+            .subtitle {
+                font-size: 1rem;
+            }
         }
     </style>
-
-    <!-- Load Non-Critical CSS -->
-    <link rel="stylesheet" href="styles.css" media="all">
 </head>
-<!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-RMKQEQ8PCQ"></script>
-<script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag() { dataLayer.push(arguments); }
-    gtag('js', new Date());
-
-    gtag('config', 'G-RMKQEQ8PCQ');
-</script>
 
 <body>
-    <div class="background-half"></div>
+    <div class="gradient-bg"></div>
+    <canvas class="particle-canvas" id="particleCanvas"></canvas>
     <div class="content">
-    <header>
-        <div class="logo"><a href="#">DARIA</a></div>
-        <nav>
-            <div class="menu-icon" onclick="toggleMenu()">&#9776;</div>
-            <ul id="nav-list">
-                <li class="studio-hover"><a href="#studio">Studio</a></li>
-                <li class="capital-hover"><a href="#capital">Capital</a></li>
-                <li class="fabrics-hover"><a href="#fabrics">Fabrics</a></li>
-                <li><a href="#team">Team</a></li><li>
-                    <a href="#research">Research</a></li>
-                <li><a href="#contactbox">Contact</a></li>
-            </ul>
-        </nav>
-    </header>
-
-    <main>
-        <section class="hero">
-            <h1>Driving <span>Innovation</span> in<br> Startups and
-            Investments<br> with a focus on Generative AI 
-            </h1>
-            <!-- <div class="cards">
-                <div class="card">
-                    <p>New</p>
-                    <h3>Creating Startups</h3>
-                    <p>We provide proven solutions to the global market by creating innovative startups.</p>
-                    <button>Explore Our Startups</button>
-                </div>
-                <div class="card">
-                    <p>New</p>
-                    <h3>Investing in AI</h3>
-                    <p>We invest in promising AI companies, including own, unlisted, and listed ventures.</p>
-                    <button>Discover Our Investments</button>
-                </div>
-            </div> -->
-        </section>
-        <section id="horizontal-sections" class="horizontal-sections">
-            <div id="studio-intro" class="block">
-                <sub>New</sub>
-                <h2>Daria Studio</h2>
-                <img src="assets/rocket.svg" alt="Rocket Icon" class="icon">
-                <p>Innovating the future by launching startups that deliver transformative solutions globally.</p>
-                <button id="studio-button">Explore Our Startups</button>
-            </div>
-            <div id="capital-intro" class="block">
-                <sub>New</sub>
-                <h2>Daria Capital</h2>
-                <img src="assets/bank.svg" alt="Rocket Icon" class="icon">
-                <p>Strategically investing in cutting-edge AI ventures, from emerging to established companies.</p>
-                <button id="capital-button">Discover Our Investments</button>
-            </div>
-            <div id="fabrics-intro" class="block">
-                <sub>Coming Soon</sub>
-                <h2>Daria Fabrics</h2>
-                <img src="assets/layout.svg" alt="Rocket Icon" class="icon">
-                <p>Collaborating with ICAD to enhance infrastructure within the AI ecosystem.</p>
-                <button id="fabrics-button">About Our Infrastructure</button>
-            </div>
-        </section>
-        
-        <div style="background:linear-gradient(to bottom, rgba(255, 255, 255, 0) 0%, rgba(255, 255, 255, 0) 75%, #f7f7f7 75%);">
-        <section id="vision" class="split-section">
-            <div class="content-container">
-            <img src="assets/about.webp" alt="About Us Image">
-            <div class="text-content">
-                <h2>Vision</h2>
-                <p>At Daria, our vision is to transform industries through innovative AI-driven solutions. We nurture groundbreaking ideas
-                from inception to market success, invest in GenAI opportunities with significant societal impact, and leverage AI across
-                the value chain. Together, we drive innovation, support visionary leaders, and revolutionize industries.</p>
-                <button>Join Us</button>
-            </div>
-            </div>
-        </section>
-        </div>
-
-        <div style="background: #f7f7f7">
-        <!-- <div class="separator" style="background: #eaeaea url('assets/separator.svg') no-repeat center;background-size: cover;"></div> -->
-        <section id="contact" class="split-section studio">
-            <div class="content-container">
-                <!-- <img src="assets/image.webp" alt="Contact Image"> -->
-                <div id="studio" class="text-content">
-                    <h2>Studio</h2>
-                    <p>Innovating the future by launching startups that deliver transformative solutions globally.</p>
-                    <p>Daria Studios is a startup studio dedicated to nurturing innovative AI-driven ideas. Collaborating with group companies,
-                    local businesses, and leading universities worldwide, Daria Studios identifies and supports unique solutions where
-                    Generative AI is the key ingredient. Our team guides these ideas through the stages of MVP, customer testing, and
-                    product-market fit, eventually scaling them up in partnership with Daria Capital.</p>
-                    <!-- <button>Contact Us</button> -->
-                </div>
-            </div>
-            <div class="cards">
-                <div class="card">
-                    <h3>1. Source</h3>
-                    <p>We identify and nurture groundbreaking ideas, transforming them into innovative startups ready for market
-                        entry.</p>
-                    <!-- <button>Explore Our Startups</button> -->
-                </div>
-                <div class="card">
-                    <h3>2. Search</h3>
-                    <p>We search for opportunities and resources, ensuring our startups achieve product-market fit and have a solid
-                        growth strategy.</p>
-                    <!-- <button>Discover Our Investments</button> -->
-                </div>
-                <div class="card">
-                    <h3>3. Scale</h3>
-                    <p>We scale these startups by leveraging strategic partnerships, expanding their reach, and enhancing their
-                        infrastructure for global success.</p>
-                    <!-- <button>About Our Infrastructure</button> -->
-                </div>
-            </div>
-        </section>
-
-        <section id="contact" class="split-section capital">
-            <div class="content-container">
-                <!-- <img src="assets/image.webp" alt="Contact Image"> -->
-                <div id="capital" class="text-content">
-                    <h2>Capital</h2>
-                    <p>Daria Capital’s investments focus on AI-driven opportunities, particularly those with a KSA angle. Our investment
-                    philosophy centers on backing strong leaders with bold ideas that have the potential to transform the world. We
-                    prioritize AGI-related projects that promise significant advancements and societal benefits.</p>
-                    <!-- <button>Contact Us</button> -->
-                </div>
-            </div>
-            <div class="cards">
-                <div class="card">
-                    <h3>Own</h3>
-                    <p>Our main objective is to support successful startups emerging from Daria Studios. We collaborate with funds and
-                    individuals within the Kingdom of Saudi Arabia and worldwide to support our startups from the day they are incorporated
-                    until they reach Series B investment.</p>
-                    <!-- <button>Explore Our Startups</button> -->
-                </div>
-                <div class="card">
-                    <h3>Unlisted</h3>
-                    <p>When we identify a startup that is already successfully working on an idea from our Studio, we approach them to evaluate
-                    potential investments. We provide comprehensive support from our strong GenAI team, ensuring these startups have the
-                    resources and guidance they need to thrive.</p>
-                    <!-- <button>Discover Our Investments</button> -->
-                </div>
-                <div class="card">
-                    <h3>Listed</h3>
-                    <p>We work closely with Daria Fabrics to identify lucrative opportunities across the AI value stream. This collaboration
-                    helps us diversify our investment portfolio and capitalize on emerging trends and technologies in the AI sector.</p>
-                    <!-- <button>About Our Infrastructure</button> -->
-                </div>
-            </div>
-        </section>
-
-        <section id="contact" class="split-section fabrics">
-            <div class="content-container">
-                <!-- <img src="assets/image.webp" alt="Contact Image"> -->
-                <div id="fabrics" class="text-content">
-                    <h2>Fabrics</h2>
-                    <p>Daria Fabrics seeks to leverage opportunities across the extended AI value chain. As AI reshapes industries, we
-                    collaborate with companies within and outside our group to support this transformation. From addressing the growing
-                    electricity demands of AI infrastructure to adapting industries to new technological realities, Daria Fabrics is at the
-                    forefront of this evolution.</p>
-                    <!-- <button>Contact Us</button> -->
-                </div>
-            </div>
-            <div class="cards">
-                <div class="card">
-                    <!-- <p>Up to</p> -->
-                    <s1>70%</s1>
-                    <p>of business activities in the banking sector could be automated using generative AI, transforming operations and
-                    requiring significant upskilling and reskilling of the workforce to manage and leverage these new technologies
-                    effectively.</p>
-                    <!-- <button>Explore Our Startups</button> -->
-                </div>
-                <div class="card">
-                    <s1>5,000</s1>
-                    <p>
-                    the number of new AI data centers anticipated to be built globally by 2030, reflecting the expanding infrastructure to
-                    support AI technologies.</p>
-                    <!-- <button>Discover Our Investments</button> -->
-                </div>
-                <div class="card">
-                    <s1>5%</s1>
-                    <p>
-                    of the US’s energy demand is from data centers, with global data center consumption expected to double by 2026.</p>
-                    <!-- <button>About Our Infrastructure</button> -->
-                </div>
-            </div>
-        </section>
-
-        <section id="team" class="split-section">
-            <div class="content-container">
-                <div class="text-content">
-                    <h2>Team</h2>
-                    <!-- <p>Meet our dedicated team.</p> -->
-                </div>
-            </div>
-            <div class="cards">
-                <div class="card">
-                    <img src="assets/KA.jpg" alt="Kolbeinn">
-                    <h3>Kolbeinn Arinbjarnarson</h3>
-                    <p>CEO</p>
-                    <p>Mr Arinbjarnarson is a seasoned leader with extensive experience in technology, finance, the aviation industry,
-                    and startups. He has successfully launched multiple startups with successful exits. Mr. Arinbjarnarson holds an MSc in
-                    Engineering from the University of Iceland and an MSc in Applied Mathematics from Stanford University in California.</p>
-                <a href="mailto:kolbeinn@dariagroup.xyz" style="color: #555; text-decoration: none;">kolbeinn@dariagroup.xyz</a>
-                </div>
-                <div class="card">
-                    <img src="assets/AK.webp" alt="Arinbjörn">
-                    <h3>Dr. Arinbjörn Kolbeinsson</h3>
-                    <p>COO</p>
-                    <p>Arinbjörn, Imperial PhD 2020, has worked at Evidation, a healthtech unicorn, and Samsung AI. He has published over 20
-                    academic papers. Now studies law and is a researcher at the University of Virginia.</p>
-                    <a href="mailto:arinbjorn@dariagroup.xyz" style="color: #555; text-decoration: none;">arinbjorn@dariagroup.xyz</a>
-                </div>
-                <div class="card">
-                    <img src="assets/BK.jpg" alt="Benedikt">
-                    <h3>Benedikt Kolbeinsson</h3>
-                    <p>CTO</p>
-                    <p>Benedikt, Imperial PhD 2024, Master in EEE with Management, lead Imperial’s team to victory in Huawei’s international AI
-                    competition. Interned at LOGOS and worked for Scape (acquired by Facebook).</p>
-                    <a href="mailto:benedikt@dariagroup.xyz" style="color: #555; text-decoration: none;">benedikt@dariagroup.xyz</a>
-                </div>
-            </div>
-        </section>
-
-        <section id="research" class="split-section">
-            <div class="content-container">
-                <div class="text-content">
-                    <h2>Research</h2>
-                    <p>At Daria, we are committed to pushing the boundaries of AI through rigorous research and innovative
-                        development. Our dedicated research team focuses on pioneering advancements in generative AI, ensuring
-                        our solutions remain at the forefront of technological evolution.</p>
-                    <h3>Cutting-Edge Innovation</h3>
-                    <p>Our research endeavors are driven by a passion for discovery and a commitment to excellence. By
-                        collaborating with leading academic institutions and industry experts, we explore new frontiers in AI,
-                        developing technologies that transform industries and improve lives.</p>
-                </div>
-                </div>
-                <div class="content-container">
-                <div class="cards">
-                    <div class="card">
-                        <h3>Generative AI</h3>
-                        <p>Investigating the latest in generative AI to create more sophisticated, efficient, and intelligent
-                            systems. Our research includes advancements in natural language processing, image generation, and
-                            autonomous systems.</p>
-                    </div>
-                    <div class="card">
-                        <h3>AI Ethics and Governance</h3>
-                        <p>Ensuring our AI developments adhere to the highest ethical standards. We focus on creating
-                            transparent, fair, and unbiased AI systems, fostering trust and reliability in AI applications.</p>
-                    </div>
-                    <div class="card">
-                        <h3>AI Infrastructure</h3>
-                        <p>Innovating the infrastructure needed to support advanced AI technologies. From data center
-                            optimization to scalable cloud solutions, our research ensures that AI systems are robust, secure,
-                            and sustainable.</p>
-                    </div>
-                </div>
-                </div>
-                <div class="content-container">
-                <div class="text-content">
-                    <h3>Collaborations and Publications</h3>
-                    <p>Our research is supported by strategic partnerships with top-tier universities and industry leaders. We
-                        regularly publish our findings in prestigious journals and present at leading conferences, contributing
-                        to the global AI research community.</p>
-                    <!-- <h3>Join Our Research Team</h3>
-                    <p>We are always looking for brilliant minds to join our research initiatives. If you are passionate about
-                        AI and want to make a significant impact, consider joining our team at Daria.</p>
-                    <p>For more information on our research projects or to discuss potential collaborations, please contact us
-                        at:</p> -->
-                    <button id="research-button">Join our research team</button>
-                </div>
-            </div>
-        </section>
+        <h1 class="logo">DARIA</h1>
+        <p class="subtitle">Something transformative is emerging</p>
+        <a href="mailto:hello@dariagroup.xyz" class="contact">hello@dariagroup.xyz</a>
     </div>
 
-    <div style="background:linear-gradient(to bottom, rgba(255, 255, 255, 0) 0%, rgba(255, 255, 255, 0) 75%, #333 75%);">
-        <section id="contactbox" class="split-section">
-            <div class="content-container">
-                <img src="assets/image.webp" alt="Contact Image">
-                <div class="text-content">
-                    <h2>Contact</h2>
-                    <p>
-                        <img src="assets/email.svg" alt="Email Icon"
-                            style="width: 24px; height: 24px; border-radius: 0%; vertical-align: middle; padding-right: 14px; box-sizing: content-box; background: transparent; box-shadow: none;">
-                        <a href="mailto:hello@dariagroup.xyz"
-                            style="color: inherit; text-decoration: none;">hello@dariagroup.xyz</a>
-                    </p>
-                    <p>
-                        <img src="assets/phone.svg" alt="Phone Icon"
-                            style="width: 32px; height: 32px; border-radius: 0%; vertical-align: middle; padding-right: 8px; box-sizing: content-box; background: transparent; box-shadow: none;">
-                        <a href="tel:+966503576775" style="color: inherit; text-decoration: none;">+966 50 357 6775</a>
-                    </p>
-                    <!-- <button>Contact Us</button> -->
-                </div>
-            </div>
-        </section>
-        </div>
-    </div>
-    </main>
+    <script>
+        const canvas = document.getElementById('particleCanvas');
+        const ctx = canvas.getContext('2d');
 
-    <script src="scripts.js"></script>
-    
-    <footer>
-        <div class="footer-content">
-            <p>&copy; 2024 Daria. All rights reserved.</p>
-            <!-- <p>Privacy Policy | Terms of Service</p> -->
-            <!-- <p>Email: contact@example.com | Phone: +1234567890</p> -->
-        </div>
-    </footer>
-</div>
+        // Set canvas size
+        function resizeCanvas() {
+            canvas.width = window.innerWidth;
+            canvas.height = window.innerHeight;
+        }
+        resizeCanvas();
+        window.addEventListener('resize', resizeCanvas);
+
+        // Particle system
+        class Particle {
+            constructor() {
+                this.reset();
+            }
+
+            reset() {
+                // Random starting position
+                this.x = Math.random() * canvas.width;
+                this.y = Math.random() * canvas.height;
+
+                // Random velocity
+                this.vx = (Math.random() - 0.5) * 2;
+                this.vy = (Math.random() - 0.5) * 2;
+
+                // Particle properties
+                this.alpha = Math.random() * 0.3 + 0.1; // More subtle opacity
+                this.size = Math.random() * 1.5 + 0.5; // Smaller particles
+
+                // Time-based properties for organic movement
+                this.time = Math.random() * 100;
+                this.timeSpeed = 0.01 + Math.random() * 0.02;
+            }
+
+            update() {
+                // Create more angular, tech-inspired movement
+                this.time += this.timeSpeed;
+
+                // Occasionally change direction sharply
+                if (Math.random() < 0.02) {
+                    this.vx = (Math.random() - 0.5) * 3;
+                    this.vy = (Math.random() - 0.5) * 3;
+                }
+
+                // Add slight drift
+                this.x += this.vx;
+                this.y += this.vy - 0.5; // Slight upward drift
+
+                // Check bounds
+                if (this.x < 0 || this.x > canvas.width ||
+                    this.y < 0 || this.y > canvas.height) {
+                    this.reset();
+                }
+
+                // Draw particle
+                ctx.beginPath();
+                ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2);
+                ctx.fillStyle = `rgba(255, 255, 255, ${this.alpha})`;
+                ctx.fill();
+            }
+        }
+
+        // Create particle system
+        const particles = Array(150).fill().map(() => new Particle()); // More particles but smaller and subtler
+
+        // Animation loop
+        function animate() {
+            // Clear canvas with semi-transparent black for trail effect
+            ctx.fillStyle = 'rgba(10, 10, 10, 0.1)';
+            ctx.fillRect(0, 0, canvas.width, canvas.height);
+
+            // Update and draw particles
+            particles.forEach(particle => particle.update());
+
+            // Continue animation
+            requestAnimationFrame(animate);
+        }
+
+        // Start animation
+        animate();
+    </script>
 </body>
 
 </html>
